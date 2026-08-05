@@ -29,7 +29,8 @@ header .nav-wrapper > .nav-utility {
     width: 100%;
   }
 
-  /* right-anchored to the viewport edge with a consistent gutter (matches WKND) */
+  /* same content box as the main nav so the right edge aligns with the
+     search box's right edge (per critique) */
   header .nav-wrapper > .nav-utility ul {
     box-sizing: border-box;
     display: flex;
@@ -37,8 +38,9 @@ header .nav-wrapper > .nav-utility {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    margin: 0;
-    padding: 0 48px 0 32px;
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 0 32px;
     list-style: none;
     font-size: 14px;
     text-transform: uppercase;
@@ -66,6 +68,20 @@ header .nav-wrapper > .nav-utility {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  /* down-arrow after EN-US (language toggle) */
+  header .nav-wrapper > .nav-utility .icon-chevron-down {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  header .nav-wrapper > .nav-utility .icon-chevron-down img {
+    width: 100%;
+    height: 100%;
   }
 
   header .nav-wrapper > .nav-utility a:any-link {

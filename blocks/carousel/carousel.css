@@ -53,19 +53,21 @@
 
 .carousel .carousel-slide-content .button {
   font-size: 14px;
+  font-weight: 600;
+  padding: 14px 35px;
 }
 
 /* dots */
 .carousel .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   padding: 16px 0;
 }
 
 .carousel .carousel-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   padding: 0;
   border: 0;
   border-radius: 50%;
@@ -77,7 +79,7 @@
   background-color: var(--text-color);
 }
 
-/* prev/next controls */
+/* prev/next controls: line arrows (shaft + arrowhead) matching WKND source */
 .carousel .carousel-controls {
   display: flex;
   justify-content: center;
@@ -87,32 +89,47 @@
 
 .carousel .carousel-prev,
 .carousel .carousel-next {
-  width: 40px;
-  height: 40px;
+  width: 26px;
+  height: 24px;
   border: 0;
   background: transparent;
   cursor: pointer;
   position: relative;
 }
 
+/* arrow shaft */
 .carousel .carousel-prev::before,
 .carousel .carousel-next::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-color);
+  transform: translate(-50%, -50%);
+}
+
+/* arrowhead */
+.carousel .carousel-prev::after,
+.carousel .carousel-next::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
   border: solid var(--text-color);
-  border-width: 2px 2px 0 0;
+  border-width: 2px 0 0 2px;
 }
 
-.carousel .carousel-prev::before {
-  transform: translate(-30%, -50%) rotate(-135deg);
+.carousel .carousel-prev::after {
+  left: 0;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
-.carousel .carousel-next::before {
-  transform: translate(-70%, -50%) rotate(45deg);
+.carousel .carousel-next::after {
+  right: 0;
+  transform: translateY(-50%) rotate(135deg);
 }
 
 /* desktop: white content band overlapping the image bottom (WKND layout) */
@@ -136,8 +153,8 @@
     z-index: 1;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1264px;
-    padding: 40px 56px;
+    max-width: 1192px;
+    padding: 40px 28px;
     background-color: var(--background-color);
   }
 

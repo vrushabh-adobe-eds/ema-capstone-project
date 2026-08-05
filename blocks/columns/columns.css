@@ -50,6 +50,12 @@
   padding: 32px 24px;
 }
 
+.columns.featured h2,
+.columns.adventure-teaser h2 {
+  font-size: 36px;
+  margin-top: 0.25em;
+}
+
 .columns.featured .button-container a.button,
 .columns.featured p a.button {
   margin-top: 8px;

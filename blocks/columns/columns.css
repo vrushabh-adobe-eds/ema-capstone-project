@@ -85,6 +85,12 @@
     flex: 0 0 62.5%;
   }
 
+  /* border-box so the panel's padding stays inside its 37.5% track and
+     the two columns sum to 100% without overflowing the section */
+  .columns.featured > div > div {
+    box-sizing: border-box;
+  }
+
   .columns.featured > div > div:last-child {
     flex: 0 0 37.5%;
     padding: 63px 36px 36px;

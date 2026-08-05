@@ -181,9 +181,10 @@ button.button {
   margin: 0;
   border: 2px solid transparent;
   border-radius: 0;
-  padding: 0.7em 1.6em;
+  padding: 14px 35px;
   font: inherit;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 0.04em;

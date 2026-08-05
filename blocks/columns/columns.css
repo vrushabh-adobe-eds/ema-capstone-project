@@ -74,9 +74,6 @@
 .columns.featured .button-container a.button,
 .columns.featured p a.button {
   margin-top: 0;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 14px 35px;
 }
 
 @media (width >= 900px) {

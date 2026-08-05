@@ -30,7 +30,7 @@
 .cards.articles > ul,
 .cards.adventures > ul {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 24px;
+  gap: 14px;
 }
 
 .cards.articles > ul > li,
@@ -47,7 +47,9 @@
 .cards.articles .cards-card-body h3,
 .cards.adventures .cards-card-body h3 {
   margin: 0 0 8px;
+  font-family: var(--body-font-family);
   font-size: 18px;
+  font-weight: 600;
   line-height: 1.3;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -70,6 +72,9 @@
   text-transform: uppercase;
   font-size: var(--body-font-size-xs);
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (width >= 900px) {

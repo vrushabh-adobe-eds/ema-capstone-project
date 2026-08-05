@@ -75,7 +75,7 @@ footer .footer .section:first-child .default-content-wrapper ul a {
 footer .footer .section:first-child .default-content-wrapper > p:last-child {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 0;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -83,14 +83,20 @@ footer .footer .section:first-child .default-content-wrapper > p:last-child {
   font-size: 14px;
 }
 
+/* icon chips: 48x48 light-gray, flush together to form one continuous bar (WKND) */
 footer .footer .section:first-child .default-content-wrapper > p:last-child a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--background-color);
+  width: 48px;
+  height: 48px;
+  background-color: var(--text-color-inverse);
   text-decoration: none;
+}
+
+/* separate the "Follow Us" label from the icon group */
+footer .footer .section:first-child .default-content-wrapper > p:last-child a:first-of-type {
+  margin-left: 16px;
 }
 
 footer .footer .icon-facebook,

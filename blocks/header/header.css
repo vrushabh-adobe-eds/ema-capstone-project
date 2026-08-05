@@ -283,6 +283,10 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap;
+
+    /* push nav links to the right, next to the search box (matches WKND) */
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 
   header nav[aria-expanded='true'] .nav-sections {

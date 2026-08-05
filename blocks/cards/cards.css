@@ -88,8 +88,7 @@
 }
 
 /* the "Where do you want to go?" heading above the adventures cards is a
-   smaller h3-style title in the WKND source (24px, regular weight) */
+   smaller h3-style title in the WKND source (24px) */
 main .section:has(.cards.adventures) .default-content-wrapper h2 {
   font-size: 24px;
-  font-weight: 400;
 }

@@ -100,27 +100,33 @@
   transform: translate(-70%, -50%) rotate(45deg);
 }
 
-/* desktop: overlay card sits on top of the image (WKND layout) */
+/* desktop: wide overlay band anchored to the image bottom (WKND layout) */
 @media (width >= 900px) {
   .carousel .carousel-slide-image picture,
   .carousel .carousel-slide-image img {
     height: 640px;
   }
 
-  .carousel .carousel-slide-content {
-    position: absolute;
-    left: 0;
-    bottom: 80px;
-    width: min(760px, 70%);
-    padding: 40px 48px;
+  .carousel .carousel-slide {
+    position: relative;
   }
 
-  /* place dots + controls bottom-right, below the overlay */
-  .carousel .carousel-dots {
+  /* white content band spanning the content box at the image bottom (WKND) */
+  .carousel .carousel-slide-content {
     position: absolute;
-    right: 120px;
-    bottom: 24px;
-    padding: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1264px;
+    padding: 40px 56px;
+    background-color: var(--background-color);
+  }
+
+  /* dots centered, controls bottom-right, in the strip below the hero */
+  .carousel .carousel-dots {
+    padding: 24px 0;
   }
 
   .carousel .carousel-controls {

@@ -78,8 +78,11 @@
 }
 
 @media (width >= 900px) {
+  /* minmax(0, 1fr) keeps the 4 tracks equal — plain 1fr uses each image's
+     intrinsic width as the track minimum, which blows the columns out to
+     unequal widths once the (differently sized) images load */
   .cards.articles > ul,
   .cards.adventures > ul {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

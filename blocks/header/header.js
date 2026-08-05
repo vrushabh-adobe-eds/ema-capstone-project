@@ -124,7 +124,7 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['brand', 'sections', 'tools', 'utility'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
@@ -135,6 +135,25 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
+  }
+
+  // build a real search input box around the search icon (matches WKND source)
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const searchIcon = navTools.querySelector('.icon-search');
+    if (searchIcon && !navTools.querySelector('input')) {
+      const searchBox = document.createElement('div');
+      searchBox.className = 'nav-search';
+      const iconSpan = searchIcon.closest('.icon') || searchIcon;
+      const input = document.createElement('input');
+      input.type = 'search';
+      input.placeholder = 'SEARCH';
+      input.setAttribute('aria-label', 'Search');
+      searchBox.append(iconSpan.cloneNode(true), input);
+      const wrapper = navTools.querySelector('.default-content-wrapper') || navTools;
+      wrapper.textContent = '';
+      wrapper.append(searchBox);
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
@@ -166,6 +185,21 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+
+  // lift the utility section out of nav into its own top bar (WKND dark top bar)
+  const navUtility = nav.querySelector('.nav-utility');
+  if (navUtility) {
+    navUtility.remove();
+    navWrapper.append(navUtility);
+  }
+
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // sticky-shrink: add .scrolled to the header block past a threshold (matches WKND)
+  const onScroll = () => {
+    block.classList.toggle('scrolled', window.scrollY > 80);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 }

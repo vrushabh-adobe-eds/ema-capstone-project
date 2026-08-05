@@ -335,15 +335,16 @@ header nav .nav-sections ul > li > ul > li {
     flex: 0 1 auto;
     position: relative;
     display: flex;
-    align-items: stretch;
+    align-items: center;
   }
 
-  /* nav link: full-height cell so the yellow hover block fills the bar (WKND) */
+  /* nav link: padded block (~48px) vertically centered in the row, matching
+     WKND's 15px/17px hover box (not the full nav height) */
   header nav .nav-sections .default-content-wrapper > ul > li > a {
     display: flex;
     align-items: center;
-    height: var(--nav-height);
-    padding: 0 17px;
+    padding: 15px 17px;
+    line-height: 1;
     transition: background-color 0.15s ease;
   }
 

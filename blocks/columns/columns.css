@@ -94,7 +94,16 @@
   }
 }
 
-/* adventure-teaser variant (image with overlay content card, WKND style) */
+/* adventure-teaser variant (full-bleed image with centered overlay card, WKND style) */
+
+/* full-bleed: break out of the section's max-width container */
+.columns.adventure-teaser {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .columns.adventure-teaser img {
   height: 320px;
   object-fit: cover;
@@ -109,17 +118,22 @@
   .columns.adventure-teaser > div {
     position: relative;
     display: block;
+    padding-bottom: 40px;
   }
 
   .columns.adventure-teaser img {
-    height: 520px;
+    height: 640px;
   }
 
+  /* centered content band overlapping the image bottom */
   .columns.adventure-teaser > div > div:last-child {
     position: absolute;
-    left: 0;
-    bottom: 60px;
-    width: min(760px, 72%);
-    padding: 40px 48px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1192px;
+    padding: 24px 28px;
   }
 }

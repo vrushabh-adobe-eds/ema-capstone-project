@@ -1,0 +1,77 @@
+{
+  "source": "https://wknd.site/us/en.html",
+  "platform": "Adobe Experience Manager (AEM) — publish tier",
+  "generatedFor": "AEM to Edge Delivery Services (EDS) migration analysis",
+  "methodology": "No XML sitemap found. Inventory derived from breadth-first crawl of /us/en seeded from the homepage and expanded via the Adventures and Magazine listing pages. Every URL re-verified with a live HTTP request.",
+  "totals": {
+    "totalUrls": 26,
+    "inScope": 26,
+    "http200": 26,
+    "offDomainRedirects": 0,
+    "internalRedirects": 0,
+    "notFound": 0,
+    "templates": 7
+  },
+  "sections": [
+    { "section": "Adventures", "total": 17, "inScope": 17, "redirectOut": 0 },
+    { "section": "Magazine", "total": 6, "inScope": 6, "redirectOut": 0 },
+    { "section": "Top-level", "total": 3, "inScope": 3, "redirectOut": 0 }
+  ],
+  "templates": [
+    { "id": 1, "name": "Adventure Detail", "pages": 16, "primaryBlocks": ["Breadcrumb", "Carousel (gallery)", "Content metadata", "Title", "Buttons"] },
+    { "id": 2, "name": "Magazine Article", "pages": 5, "primaryBlocks": ["Breadcrumb", "Title", "Text/Rich text", "Image", "Fragment"] },
+    { "id": 3, "name": "Homepage", "pages": 1, "primaryBlocks": ["Hero (teaser)", "Carousel", "Cards (teaser)", "Buttons"] },
+    { "id": 4, "name": "Adventures Listing", "pages": 1, "primaryBlocks": ["Cards (image grid)", "Tabs / filter", "Search"] },
+    { "id": 5, "name": "Magazine Listing", "pages": 1, "primaryBlocks": ["Cards (teaser)", "Title"] },
+    { "id": 6, "name": "About / Content", "pages": 1, "primaryBlocks": ["Title", "Columns (layout)", "Image", "Fragment"] },
+    { "id": 7, "name": "FAQs", "pages": 1, "primaryBlocks": ["Accordion", "Text", "Separator"] }
+  ],
+  "urls": [
+    { "path": "/us/en.html", "section": "Top-level", "template": "Homepage", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/about-us.html", "section": "Top-level", "template": "About / Content", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/faqs.html", "section": "Top-level", "template": "FAQs", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures.html", "section": "Adventures", "template": "Adventures Listing", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/bali-surf-camp.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/beervana-portland.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/climbing-new-zealand.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/colorado-rock-climbing.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/cycling-southern-utah.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/cycling-tuscany.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/downhill-skiing-wyoming.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/gastronomic-marais-tour.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/napa-wine-tasting.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/riverside-camping-australia.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/ski-touring-mont-blanc.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/surf-camp-costa-rica.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/tahoe-skiing.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/west-coast-cycling.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/whistler-mountain-biking.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/adventures/yosemite-backpacking.html", "section": "Adventures", "template": "Adventure Detail", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/magazine.html", "section": "Magazine", "template": "Magazine Listing", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/magazine/arctic-surfing.html", "section": "Magazine", "template": "Magazine Article", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/magazine/guide-la-skateparks.html", "section": "Magazine", "template": "Magazine Article", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/magazine/san-diego-surf.html", "section": "Magazine", "template": "Magazine Article", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/magazine/ski-touring.html", "section": "Magazine", "template": "Magazine Article", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" },
+    { "path": "/us/en/magazine/western-australia.html", "section": "Magazine", "template": "Magazine Article", "httpStatus": 200, "redirectTarget": "", "inScope": true, "effective": "200-live" }
+  ],
+  "blocks": [
+    { "block": "Header / Nav", "source": "Block Collection", "decision": "Reuse", "notes": "Logo, main nav, search affordance, mobile menu toggle." },
+    { "block": "Footer", "source": "Block Collection", "decision": "Reuse", "notes": "Multi-column links + social row; author as a fragment." },
+    { "block": "Breadcrumb", "source": "Block Collection", "decision": "Reuse", "notes": "Present on adventure detail and article pages." },
+    { "block": "Hero (teaser)", "source": "Block Collection", "decision": "Variant", "notes": "Full-bleed image/overlay headline on homepage and detail headers." },
+    { "block": "Cards", "source": "Block Collection", "decision": "Variant", "notes": "Adventures image grid + magazine teaser cards. cards (adventures), cards (magazine)." },
+    { "block": "Carousel", "source": "Block Collection", "decision": "Variant", "notes": "Homepage spotlight + adventure gallery. carousel (gallery)." },
+    { "block": "Columns", "source": "Block Collection", "decision": "Variant", "notes": "About-us layout containers / split content sections." },
+    { "block": "Accordion", "source": "Block Collection", "decision": "Reuse", "notes": "FAQs page." },
+    { "block": "Tabs", "source": "Block Collection", "decision": "Reuse", "notes": "Adventures listing category grouping." },
+    { "block": "Search", "source": "Block Collection", "decision": "Reuse", "notes": "Adventures filter/search; drive via helix-query.yaml index." },
+    { "block": "Fragment", "source": "Block Collection", "decision": "Reuse", "notes": "AEM experience fragments -> EDS fragment includes (shared CTAs, footer)." },
+    { "block": "Quote", "source": "Block Collection", "decision": "Reuse", "notes": "Pull-quotes within magazine articles." },
+    { "block": "Adventure metadata", "source": "Custom", "decision": "Build", "notes": "AEM Content Fragment (price, duration, difficulty, group size) -> author as a small metadata/spec block or default content." }
+  ],
+  "discoveryNotes": [
+    { "category": "No XML sitemap", "description": "wknd.site exposes no /sitemap.xml; inventory relies on crawl + listing-page expansion.", "impact": "low" },
+    { "category": "Listing-driven discovery", "description": "Adventure and magazine detail pages are only reachable via their listing pages; a shallow root-only crawl under-counts them.", "impact": "medium" }
+  ],
+  "reconciliation": { "status": "N/A", "reason": "No prior crawl/report data supplied." }
+}

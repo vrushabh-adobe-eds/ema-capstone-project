@@ -52,6 +52,9 @@ footer .footer .icon-wknd-logo img {
   display: block;
   width: 100%;
   height: auto;
+
+  /* logo file is the dark variant; invert to white for the dark footer */
+  filter: invert(1);
 }
 
 /* nav links (the ul) */

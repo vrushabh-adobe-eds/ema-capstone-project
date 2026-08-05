@@ -106,23 +106,25 @@
   transform: translate(-70%, -50%) rotate(45deg);
 }
 
-/* desktop: wide overlay band anchored to the image bottom (WKND layout) */
+/* desktop: white content band overlapping the image bottom (WKND layout) */
 @media (width >= 900px) {
   .carousel .carousel-slide-image picture,
   .carousel .carousel-slide-image img {
     height: 640px;
   }
 
+  /* reserve space below the image so the band can overhang without clipping */
   .carousel .carousel-slide {
-    position: relative;
+    padding-bottom: 80px;
   }
 
-  /* white content band spanning the content box at the image bottom (WKND) */
+  /* content band: absolute inside the slide, overlapping the image bottom */
   .carousel .carousel-slide-content {
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+    z-index: 1;
     box-sizing: border-box;
     width: 100%;
     max-width: 1264px;

@@ -24,6 +24,11 @@ header .nav-wrapper > .nav-utility {
     transition: height 0.2s ease;
   }
 
+  /* the default-content-wrapper must span full width so the ul can right-align */
+  header .nav-wrapper > .nav-utility .default-content-wrapper {
+    width: 100%;
+  }
+
   header .nav-wrapper > .nav-utility ul {
     display: flex;
     gap: 28px;

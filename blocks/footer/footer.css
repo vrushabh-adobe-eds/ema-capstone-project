@@ -1,20 +1,146 @@
+/* stylelint-disable no-descending-specificity -- structural footer selectors are ordered by DOM flow, not specificity */
+
 footer {
-  background-color: var(--light-color);
+  background-color: var(--dark-surface);
+  color: var(--text-color-inverse);
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
+footer .footer .section {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1264px;
+  padding: 24px;
 }
 
 footer .footer p {
+  margin: 0 0 12px;
+}
+
+footer .footer a:any-link {
+  color: var(--text-color-inverse);
+  text-decoration: underline;
+}
+
+footer .footer a:hover {
+  color: var(--brand-yellow);
+}
+
+/* ---- top row (first section): brand + nav + social ---- */
+footer .footer .section:first-child .default-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* brand logo (first paragraph, contains the logo icon link) */
+footer .footer .section:first-child .default-content-wrapper > p:first-child {
   margin: 0;
 }
 
+footer .footer .section:first-child .default-content-wrapper > p:first-child a {
+  text-decoration: none;
+}
+
+footer .footer .icon-wknd-logo {
+  display: inline-block;
+  width: 120px;
+  height: auto;
+}
+
+footer .footer .icon-wknd-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  /* logo file is the dark variant; invert to white for the dark footer */
+  filter: invert(1);
+}
+
+/* nav links (the ul) */
+footer .footer .section:first-child .default-content-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer .section:first-child .default-content-wrapper ul a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+}
+
+/* social row (last paragraph in the first section: "Follow Us" + icon links) */
+footer .footer .section:first-child .default-content-wrapper > p:last-child {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* icon chips: 48x48 light-gray, flush together to form one continuous bar (WKND) */
+footer .footer .section:first-child .default-content-wrapper > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--text-color-inverse);
+  text-decoration: none;
+}
+
+/* separate the "Follow Us" label from the icon group */
+footer .footer .section:first-child .default-content-wrapper > p:last-child a:first-of-type {
+  margin-left: 16px;
+}
+
+footer .footer .icon-facebook,
+footer .footer .icon-twitter,
+footer .footer .icon-instagram {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+footer .footer .icon-facebook img,
+footer .footer .icon-twitter img,
+footer .footer .icon-instagram img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- copyright + description block (second section) ---- */
+footer .footer .section:last-child {
+  line-height: 1.6;
+}
+
+footer .footer .section:last-child p:first-child {
+  margin-bottom: 20px;
+}
+
+/* tablet+ : brand + nav on the left, social pushed right (matches source) */
+@media (width >= 600px) {
+  footer .footer .section:first-child .default-content-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  footer .footer .section:first-child .default-content-wrapper > p:last-child {
+    margin-left: auto;
+  }
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer .section {
+    padding: 40px 32px;
   }
 }

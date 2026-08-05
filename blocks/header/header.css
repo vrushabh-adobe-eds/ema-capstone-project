@@ -6,6 +6,94 @@ header .nav-wrapper {
   position: fixed;
 }
 
+/* dark top utility bar (WKND: Sign In + language) — hidden on mobile */
+header .nav-wrapper > .nav-utility {
+  display: none;
+  visibility: hidden;
+}
+
+@media (width >= 900px) {
+  header .nav-wrapper > .nav-utility {
+    display: flex;
+    visibility: visible;
+    align-items: center;
+    height: var(--utility-height, 44px);
+    background-color: var(--dark-surface);
+    color: var(--text-color-inverse);
+    overflow: hidden;
+    transition: height 0.2s ease;
+  }
+
+  /* the default-content-wrapper must span full width so the ul can right-align */
+  header .nav-wrapper > .nav-utility .default-content-wrapper {
+    width: 100%;
+  }
+
+  /* same content box as the main nav so the right edge aligns with the
+     search box's right edge (per critique) */
+  header .nav-wrapper > .nav-utility ul {
+    box-sizing: border-box;
+    display: flex;
+    gap: 28px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 0 32px;
+    list-style: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  header .nav-wrapper > .nav-utility li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  /* US flag before EN-US */
+  header .nav-wrapper > .nav-utility .icon-flag-us {
+    display: inline-block;
+    width: 22px;
+    height: 15px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  header .nav-wrapper > .nav-utility .icon-flag-us img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* down-arrow after EN-US (language toggle) */
+  header .nav-wrapper > .nav-utility .icon-chevron-down {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  header .nav-wrapper > .nav-utility .icon-chevron-down img {
+    width: 100%;
+    height: 100%;
+  }
+
+  header .nav-wrapper > .nav-utility a:any-link {
+    color: var(--text-color-inverse);
+  }
+
+  /* shrink the top bar away on scroll */
+  header .header.block.scrolled .nav-wrapper > .nav-utility {
+    height: 0;
+  }
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;
@@ -31,6 +119,15 @@ header nav[aria-expanded='true'] {
 }
 
 @media (width >= 900px) {
+  /* sticky header: let the landmark stick, wrapper flows inside it */
+  header.header-wrapper,
+  body > header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: auto;
+  }
+
   header .nav-wrapper {
     position: relative;
   }
@@ -139,18 +236,32 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   }
 }
 
-/* brand */
+/* brand — WKND wordmark logo (128px to match source) */
 header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
-header nav .nav-brand img {
+header nav .nav-brand .icon-wknd-logo {
+  display: flex;
+  align-items: center;
   width: 128px;
   height: auto;
+  transition: width 0.2s ease;
+}
+
+header nav .nav-brand .icon-wknd-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* shrink logo slightly on scroll */
+header .header.block.scrolled nav .nav-brand .icon-wknd-logo {
+  width: 100px;
 }
 
 /* sections */
@@ -170,11 +281,13 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -190,6 +303,10 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap;
+
+    /* push nav links to the right, next to the search box (matches WKND) */
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -224,13 +341,34 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    gap: 0;
     margin: 0;
+    align-items: center;
+    height: var(--nav-height);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  /* nav link: padded block (~48px) vertically centered in the row, matching
+     WKND's 15px/17px hover box (not the full nav height) */
+  header nav .nav-sections .default-content-wrapper > ul > li > a {
+    display: flex;
+    align-items: center;
+    padding: 15px 17px;
+    line-height: 1;
+    transition: background-color 0.15s ease;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > a:hover,
+  header nav .nav-sections .default-content-wrapper > ul > li > a:focus-visible {
+    background-color: var(--brand-yellow);
+    color: var(--text-color);
+    text-decoration: none;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -266,7 +404,71 @@ header nav .nav-sections ul > li > ul > li {
   }
 }
 
-/* tools */
+/* tools — search box */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* search box — matches WKND source: gray field, dark border + white bg on focus */
+header nav .nav-search {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  height: 32px;
+  background-color: rgb(235 235 235 / 54%);
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* focus state (input clicked/focused) */
+header nav .nav-search:focus-within {
+  background-color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+header nav .nav-search .icon-search {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+header nav .nav-search .icon-search img {
+  width: 100%;
+  height: 100%;
+}
+
+header nav .nav-search input {
+  border: 0;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+}
+
+header nav .nav-search input::placeholder {
+  color: var(--dark-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 1;
+}
+
+@media (width >= 900px) {
+  header nav .nav-search {
+    width: 200px;
+  }
+
+  /* main nav row shrinks on scroll (sticky-shrink) */
+  header .header.block nav {
+    transition: height 0.2s ease;
+  }
+
+  header .header.block.scrolled nav {
+    height: 56px;
+  }
 }

@@ -1,0 +1,133 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel .carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel .carousel-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+/* full-bleed slide image */
+.carousel .carousel-slide-image {
+  width: 100%;
+}
+
+.carousel .carousel-slide-image picture,
+.carousel .carousel-slide-image img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* overlay content card (heading + text + CTA) */
+.carousel .carousel-slide-content {
+  background-color: var(--background-color);
+  padding: 24px;
+  margin: 0;
+}
+
+.carousel .carousel-slide-content h1,
+.carousel .carousel-slide-content h2 {
+  font-family: var(--heading-font-family);
+  margin-top: 0;
+}
+
+/* dots */
+.carousel .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.carousel .carousel-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  cursor: pointer;
+}
+
+.carousel .carousel-dot[aria-selected='true'] {
+  background-color: var(--text-color);
+}
+
+/* prev/next controls */
+.carousel .carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 16px;
+}
+
+.carousel .carousel-prev,
+.carousel .carousel-next {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.carousel .carousel-prev::before,
+.carousel .carousel-next::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border: solid var(--text-color);
+  border-width: 2px 2px 0 0;
+}
+
+.carousel .carousel-prev::before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.carousel .carousel-next::before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+/* desktop: overlay card sits on top of the image (WKND layout) */
+@media (width >= 900px) {
+  .carousel .carousel-slide-image picture,
+  .carousel .carousel-slide-image img {
+    height: 560px;
+  }
+
+  .carousel .carousel-slide-content {
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    width: min(760px, 70%);
+    padding: 40px 48px;
+  }
+
+  /* place dots + controls bottom-right, below the overlay */
+  .carousel .carousel-dots {
+    position: absolute;
+    right: 120px;
+    bottom: 24px;
+    padding: 0;
+  }
+
+  .carousel .carousel-controls {
+    position: absolute;
+    right: 32px;
+    bottom: 12px;
+    gap: 16px;
+    padding: 0;
+  }
+}

@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity -- variant selectors ordered by DOM flow */
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +31,62 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* featured article variant (image left, text on light panel) */
+.columns.featured > div {
+  gap: 0;
+  align-items: stretch;
+}
+
+.columns.featured img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.columns.featured > div > div:last-child {
+  background-color: var(--light-color);
+  padding: 32px 24px;
+}
+
+.columns.featured .button-container a.button,
+.columns.featured p a.button {
+  margin-top: 8px;
+}
+
+@media (width >= 900px) {
+  .columns.featured > div > div:last-child {
+    padding: 48px 56px;
+  }
+}
+
+/* adventure-teaser variant (image with overlay content card, WKND style) */
+.columns.adventure-teaser img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.columns.adventure-teaser > div > div:last-child {
+  background-color: var(--background-color);
+  padding: 24px;
+}
+
+@media (width >= 900px) {
+  .columns.adventure-teaser > div {
+    position: relative;
+    display: block;
+  }
+
+  .columns.adventure-teaser img {
+    height: 520px;
+  }
+
+  .columns.adventure-teaser > div > div:last-child {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    width: min(760px, 72%);
+    padding: 40px 48px;
   }
 }

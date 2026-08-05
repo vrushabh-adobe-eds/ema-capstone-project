@@ -173,11 +173,13 @@ button.button {
   max-width: 100%;
   margin: 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 0;
+  padding: 0.7em 1.6em;
   font: inherit;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -193,18 +195,18 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
+  border-color: var(--brand-yellow);
+  background-color: var(--brand-yellow);
+  color: var(--text-color);
 }
 
 a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--text-color);
+  background-color: var(--text-color);
+  color: var(--brand-yellow);
 }
 
 a.button.primary[aria-disabled="true"],

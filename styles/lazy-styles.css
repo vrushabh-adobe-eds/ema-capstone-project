@@ -1,1 +1,18 @@
 /* add global styles that can be loaded post LCP here */
+
+/* WKND section headings: standalone default-content h2 gets a short yellow underline */
+main .section > .default-content-wrapper > h2:first-child {
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+main .section > .default-content-wrapper > h2:first-child::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 4px;
+  background-color: var(--brand-yellow);
+}

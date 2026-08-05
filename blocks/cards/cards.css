@@ -25,3 +25,55 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/* WKND article/adventure cards: borderless, uppercase titles */
+.cards.articles > ul,
+.cards.adventures > ul {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.cards.articles > ul > li,
+.cards.adventures > ul > li {
+  border: 0;
+  background: transparent;
+}
+
+.cards.articles .cards-card-body,
+.cards.adventures .cards-card-body {
+  margin: 16px 0 0;
+}
+
+.cards.articles .cards-card-body h3,
+.cards.adventures .cards-card-body h3 {
+  margin: 0 0 8px;
+  font-size: var(--heading-font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.cards.articles .cards-card-body h3 a,
+.cards.adventures .cards-card-body h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.cards.articles .cards-card-body h3 a:hover,
+.cards.adventures .cards-card-body h3 a:hover {
+  color: var(--link-color);
+}
+
+.cards.articles .cards-card-body p,
+.cards.adventures .cards-card-body p {
+  color: var(--dark-color);
+  text-transform: uppercase;
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 0.02em;
+}
+
+@media (width >= 900px) {
+  .cards.articles > ul,
+  .cards.adventures > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

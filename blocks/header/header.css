@@ -220,16 +220,16 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   }
 }
 
-/* brand — WKND wordmark logo */
+/* brand — WKND wordmark logo (128px to match source) */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 96px;
+  flex-basis: 128px;
   line-height: 1;
 }
 
 header nav .nav-brand .icon-wknd-logo {
   display: inline-block;
-  width: 96px;
+  width: 128px;
   height: auto;
   transition: width 0.2s ease;
 }
@@ -241,7 +241,7 @@ header nav .nav-brand .icon-wknd-logo img {
 
 /* shrink logo slightly on scroll */
 header .header.block.scrolled nav .nav-brand .icon-wknd-logo {
-  width: 76px;
+  width: 100px;
 }
 
 /* sections */
@@ -317,13 +317,33 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    gap: 0;
     margin: 0;
+    align-items: center;
+    height: var(--nav-height);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* nav link: full-height cell so the yellow hover block fills the bar (WKND) */
+  header nav .nav-sections .default-content-wrapper > ul > li > a {
+    display: flex;
+    align-items: center;
+    height: var(--nav-height);
+    padding: 0 17px;
+    transition: background-color 0.15s ease;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > a:hover,
+  header nav .nav-sections .default-content-wrapper > ul > li > a:focus-visible {
+    background-color: var(--brand-yellow);
+    color: var(--text-color);
+    text-decoration: none;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -364,14 +384,23 @@ header nav .nav-tools {
   grid-area: tools;
 }
 
+/* search box — matches WKND source: gray field, dark border + white bg on focus */
 header nav .nav-search {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 14px;
-  height: 36px;
-  background-color: var(--light-color);
-  border: 1px solid var(--border-color);
+  gap: 10px;
+  padding: 0 16px;
+  height: 40px;
+  background-color: rgb(235 235 235 / 54%);
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* focus state (input clicked/focused) */
+header nav .nav-search:focus-within {
+  background-color: var(--background-color);
+  border-color: var(--text-color);
 }
 
 header nav .nav-search .icon-search {

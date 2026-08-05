@@ -1,92 +1,137 @@
+/* stylelint-disable no-descending-specificity -- structural footer selectors are ordered by DOM flow, not specificity */
+
 footer {
   background-color: var(--dark-surface);
   color: var(--text-color-inverse);
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
+footer .footer .section {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1264px;
+  padding: 24px;
 }
 
 footer .footer p {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
 }
 
 footer .footer a:any-link {
   color: var(--text-color-inverse);
+  text-decoration: underline;
 }
 
 footer .footer a:hover {
   color: var(--brand-yellow);
 }
 
-/* column headings */
-footer .footer h3 {
-  margin: 0 0 12px;
-  font-size: var(--body-font-size-s);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+/* ---- top row (first section): brand + nav + social ---- */
+footer .footer .section:first-child .default-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
 }
 
-footer .footer ul {
+/* brand logo (first paragraph, contains the logo icon link) */
+footer .footer .section:first-child .default-content-wrapper > p:first-child {
+  margin: 0;
+}
+
+footer .footer .section:first-child .default-content-wrapper > p:first-child a {
+  text-decoration: none;
+}
+
+footer .footer .icon-wknd-logo {
+  display: inline-block;
+  width: 120px;
+  height: auto;
+}
+
+footer .footer .icon-wknd-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* nav links (the ul) */
+footer .footer .section:first-child .default-content-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-footer .footer li {
-  margin: 6px 0;
+footer .footer .section:first-child .default-content-wrapper ul a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 14px;
 }
 
-/* brand + logo */
-footer .footer .icon-logo {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  margin-right: 8px;
+/* social row (last paragraph in the first section: "Follow Us" + icon links) */
+footer .footer .section:first-child .default-content-wrapper > p:last-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-footer .footer .icon-logo img {
-  width: 100%;
-  height: 100%;
+footer .footer .section:first-child .default-content-wrapper > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-color);
+  text-decoration: none;
 }
 
-/* social icons row */
 footer .footer .icon-facebook,
-footer .footer .icon-instagram,
-footer .footer .icon-twitter-x,
-footer .footer .icon-linkedin,
-footer .footer .icon-youtube {
+footer .footer .icon-twitter,
+footer .footer .icon-instagram {
   display: inline-block;
-  width: 22px;
-  height: 22px;
-  margin-right: 14px;
-  vertical-align: middle;
+  width: 20px;
+  height: 20px;
 }
 
 footer .footer .icon-facebook img,
-footer .footer .icon-instagram img,
-footer .footer .icon-twitter-x img,
-footer .footer .icon-linkedin img,
-footer .footer .icon-youtube img {
+footer .footer .icon-twitter img,
+footer .footer .icon-instagram img {
   width: 100%;
   height: 100%;
-  transition: opacity 0.2s ease;
 }
 
-footer .footer a:hover .icon-facebook img,
-footer .footer a:hover .icon-instagram img,
-footer .footer a:hover .icon-twitter-x img,
-footer .footer a:hover .icon-linkedin img,
-footer .footer a:hover .icon-youtube img {
-  opacity: 0.7;
+/* ---- copyright + description block (second section) ---- */
+footer .footer .section:last-child {
+  line-height: 1.6;
+}
+
+footer .footer .section:last-child p:first-child {
+  margin-bottom: 20px;
+}
+
+/* tablet+ : brand + nav on the left, social pushed right (matches source) */
+@media (width >= 600px) {
+  footer .footer .section:first-child .default-content-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  footer .footer .section:first-child .default-content-wrapper > p:last-child {
+    margin-left: auto;
+  }
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer .section {
+    padding: 40px 32px;
   }
 }

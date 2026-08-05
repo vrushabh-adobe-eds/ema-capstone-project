@@ -225,16 +225,20 @@ header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 header nav .nav-brand .icon-wknd-logo {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 128px;
   height: auto;
   transition: width 0.2s ease;
 }
 
 header nav .nav-brand .icon-wknd-logo img {
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -393,9 +397,9 @@ header nav .nav-search {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 16px;
-  height: 40px;
+  gap: 8px;
+  padding: 0 14px;
+  height: 32px;
   background-color: rgb(235 235 235 / 54%);
   border: 1px solid transparent;
   transition: background-color 0.15s ease, border-color 0.15s ease;
@@ -439,7 +443,7 @@ header nav .nav-search input::placeholder {
 
 @media (width >= 900px) {
   header nav .nav-search {
-    width: 260px;
+    width: 200px;
   }
 
   /* main nav row shrinks on scroll (sticky-shrink) */

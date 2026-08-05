@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity -- variant selectors ordered by DOM flow */
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +31,108 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* featured article variant (image left, text on light panel) */
+.columns.featured > div {
+  gap: 0;
+  align-items: stretch;
+}
+
+.columns.featured img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.columns.featured > div > div:last-child {
+  background-color: var(--border-color);
+  padding: 32px 24px;
+}
+
+/* eyebrow label ("Featured Article") — bold body text */
+.columns.featured > div > div:last-child > p:first-child {
+  font-weight: 700;
+  margin: 0 0 13.5px;
+}
+
+.columns.featured h2,
+.columns.adventure-teaser h2 {
+  font-size: 36px;
+  line-height: 1.5;
+  margin: 18px 0;
+}
+
+/* description paragraph following the heading */
+.columns.featured h2 + p {
+  font-size: 14px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.columns.featured .button-container a.button,
+.columns.featured p a.button {
+  margin-top: 0;
+}
+
+@media (width >= 900px) {
+  /* WKND split: image ~62.5%, text panel ~37.5% */
+  .columns.featured > div > .columns-img-col {
+    flex: 0 0 62.5%;
+  }
+
+  /* border-box so the panel's padding stays inside its 37.5% track and
+     the two columns sum to 100% without overflowing the section */
+  .columns.featured > div > div {
+    box-sizing: border-box;
+  }
+
+  .columns.featured > div > div:last-child {
+    flex: 0 0 37.5%;
+    padding: 63px 36px 36px;
+  }
+}
+
+/* adventure-teaser variant (full-bleed image with centered overlay card, WKND style) */
+
+/* full-bleed: break out of the section's max-width container */
+.columns.adventure-teaser {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.columns.adventure-teaser img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.columns.adventure-teaser > div > div:last-child {
+  background-color: var(--background-color);
+  padding: 24px;
+}
+
+@media (width >= 900px) {
+  .columns.adventure-teaser > div {
+    position: relative;
+    display: block;
+    padding-bottom: 40px;
+  }
+
+  .columns.adventure-teaser img {
+    height: 640px;
+  }
+
+  /* centered content band overlapping the image bottom */
+  .columns.adventure-teaser > div > div:last-child {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1192px;
+    padding: 24px 28px;
   }
 }

@@ -4,6 +4,13 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  transition: box-shadow 0.2s ease;
+}
+
+/* deeper drop shadow once the header shrinks on scroll (matches WKND source) */
+header .header.block.scrolled .nav-wrapper {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 12%);
 }
 
 /* dark top utility bar (WKND: Sign In + language) — hidden on mobile */

@@ -1,5 +1,6 @@
 .carousel {
   position: relative;
+  overflow: hidden;
 }
 
 /* full-bleed: break out of the section's max-width container */
@@ -10,10 +11,11 @@
   transform: translateX(-50%);
 }
 
-/* only the track clips horizontal slide movement */
+/* the track slides horizontally; the .carousel container clips it.
+   overflow must NOT live on the track itself — it is the transformed
+   element, so its clip window would move with it and hide the next slide. */
 .carousel .carousel-track {
   display: flex;
-  overflow: hidden;
   transition: transform 0.4s ease;
 }
 
